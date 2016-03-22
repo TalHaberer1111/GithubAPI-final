@@ -1,3 +1,9 @@
+h1 {
+  color: white !important;
+  text-shadow: 8px 8px 8px black;
+}
+
+
 .form-group {
   text-align: center; }
 
