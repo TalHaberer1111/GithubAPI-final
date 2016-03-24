@@ -1,4 +1,41 @@
 .form-group {
   text-align: center; }
 
+
+  h1 {
+    color: white !important;
+    text-shadow: 8px 8px 8px black;
+  }
+
+
+  .form-group {
+    text-align: center; }
+
+  .jumbotron {
+    background-image: url(../images/Catgit.jpg);
+    background-size: cover;
+    border-radius: 15%;
+    box-shadow: 8px 8px 8px black;
+    height: 450px;
+  }
+
+  h2 {
+    color: white !important;
+    text-shadow: 3px 3px 3px black;
+  }
+
+  input {
+    width: 60%;
+  }
+
+  label {
+    color: white;
+    text-shadow: 3px 3px 3px black;
+  }
+
+  button {
+    background-color: white !important;
+    color: black !important;
+  }
+
 /*# sourceMappingURL=styles.css.map */
