@@ -1,4 +1,3 @@
-exports.getRepos = function(userName, repoDescript) {
+exports.getRepos = function(userName) {
   this.userName = userName;
-  this.repoDescript = repoDescript;
 };
