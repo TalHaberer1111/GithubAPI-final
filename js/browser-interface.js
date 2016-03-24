@@ -1,5 +1,5 @@
 var apiKey = require('./../.env').apiKey;
-var getRepos = require('./../js/github.js').ModuleOne;
+var getRepos = require('./../js/github.js').getRepos;
 
 $(document).ready(function() {
   $('.search-btn').click(function() {
@@ -13,21 +13,6 @@ $(document).ready(function() {
       });
     }).fail(function(error){
       console.log(error.responseJSON.message);
-    });
-
-    $('.results-box-two').pagination({
-      totalPage: 5,
-      callback: function(currentPage){
-
-        $.get('https://api.github.com/users/' + username + '/repos?page=' + currentPage + '&per_page=30').then(function(response){
-          $('.results-box').empty();
-          getRepos(response).forEach(function(element){
-            $('.results-box').append('<p><a href="https://github.com/' + username + '/' + element.name + '">' + element.name + '</a> - ' + moment(element.pushed_at).format('MMMM Do YYYY') + '</p>');
-          });
-        }).fail(function(error){
-          console.log(error.responseJSON.message);
-        });
-      }
     });
   });
 });
