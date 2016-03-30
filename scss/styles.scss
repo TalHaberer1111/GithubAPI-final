@@ -1,3 +1,29 @@
-.form-group {
-  text-align: center;
-}
+// @import "bourbon";
+//
+// body {
+//   color: red;
+//     // Image asset with a linear-gradient
+// @include background-image(url("images/cat.jpg"), linear-gradient(white 0, yellow 50%, transparent 50%));
+//
+// // Multiple linear-gradients - Demo
+// }
+ body{
+   background-color: #8ecee5;
+   text-align: center;
+    h1 {
+      color: white;
+      text-shadow: 3px 3px 3px black;
+    }
+    p {
+      color: white;
+      text-shadow: 3px 3px 3px black;
+      font-size: 25px;
+    }
+  }
+
+  .results {
+    color: #2c874f;
+    // text-shadow: 3px 3px 3px black;
+    text-align: left;
+    width: 50%;
+  }
