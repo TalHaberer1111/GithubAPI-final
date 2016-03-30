@@ -1,36 +1,4 @@
-h1 {
-  color: white !important;
-  text-shadow: 8px 8px 8px black;
-}
-
-
 .form-group {
   text-align: center; }
 
-.jumbotron {
-  background-image: url(../images/Catgit.jpg);
-  background-size: cover;
-  border-radius: 15%;
-  box-shadow: 8px 8px 8px black;
-  height: 450px;
-}
-
-h2 {
-  color: white !important;
-  text-shadow: 3px 3px 3px black;
-}
-
-input {
-  width: 60%;
-}
-
-label {
-  color: white;
-  text-shadow: 3px 3px 3px black;
-}
-
-button {
-  background-color: white !important;
-  color: black !important;
-}
 /*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoic3R5bGVzLmNzcyIsInNvdXJjZXMiOlsic3R5bGVzLnNjc3MiXSwic291cmNlc0NvbnRlbnQiOlsiLmZvcm0tZ3JvdXAge1xuICB0ZXh0LWFsaWduOiBjZW50ZXI7XG59XG4iXSwibWFwcGluZ3MiOiJBQUFBLFdBQVcsQ0FBQztFQUNWLFVBQVUsRUFBRSxNQUFPLEdBQ3BCIiwibmFtZXMiOltdLCJzb3VyY2VSb290IjoiL3NvdXJjZS8ifQ== */

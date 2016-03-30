@@ -2,51 +2,7 @@
 exports.apiKey = "6a41b6e378c7a394ecad339ef010a276dc9cedf7";
 
 },{}],2:[function(require,module,exports){
-var getRepos = function(response) {
-  var i = 0;
-  var arr = [];
-  while (i < response.length) {
-    arr.push((response[i]));
-    i++;
-  }
-  return arr;
-}
-
-exports.ModuleOne = getRepos;
-
-},{}],3:[function(require,module,exports){
-var apiKey = require('./../.env').apiKey;
-var getRepos = require('./../js/github.js').ModuleOne;
-
-$(document).ready(function() {
-  $('.search-btn').click(function() {
-    $('.results-box').empty();
-    var username = $('#user-name').val();
-    $.get('https://api.github.com/users/' + username + '/repos?access_token=' + apiKey).then(function(response){
-      console.log(response);
-      getRepos(response).forEach(function(element){
-        console.log(element.name);
-        $('.results-box').append('<p><a href="https://github.com/' + username + '/' + element.name + '">' + element.name + '</a> - ' + moment(element.pushed_at).format('MMMM Do YYYY') + '</p>');
-      });
-    }).fail(function(error){
-      console.log(error.responseJSON.message);
-    });
-
-    $('.results-box-two').pagination({
-      totalPage: 10,
-      callback: function(currentPage){
-
-        $.get('https://api.github.com/users/' + username + '/repos?page=' + currentPage + '&per_page=30').then(function(response){
-          $('.results-box').empty();
-          getRepos(response).forEach(function(element){
-            $('.results-box').append('<p><a href="https://github.com/' + username + '/' + element.name + '">' + element.name + '</a> - ' + moment(element.pushed_at).format('MMMM Do YYYY') + '</p>');
-          });
-        }).fail(function(error){
-          console.log(error.responseJSON.message);
-        });
-      }
-    });
-  });
-});
-
-},{"./../.env":1,"./../js/github.js":2}]},{},[3]);
+// Tal Haberer Get Repos Function//Build Url and Query//Display Results in lines Parsing JSON input//Query and Print Summary Informationvar apiKey = require('../.env').apiKey;exports.getRepos = function() {    var GitHubUserName = $("#gitUserName").val();  $.get('https://api.github.com/users/' + GitHubUserName + '/repos' + '?access_token=' + apiKey).then(function(response){    for (var i = 0; i < response.length; i++) {     $(".results").append("<li><span class='key'> Name of Repos: </span>"+ "<span class='title'>" + response[i].name+ "</span><br>" + "<span class='key'>Creation Date: </span>" + moment(response[i].created_at).format("LLL") + "<br>"+ "<span class='key'>Repos Description: </span>" +response[i].description + "</li><br>");   }});};
+},{"../.env":1}],3:[function(require,module,exports){
+//Tal Browser Interface Module//Activate Submit Query Button//Call GetRepos functionvar getRepos = require('./../js/github.js').getRepos;$(document).ready(function() {  $('#buttonSubmit').click(function() {   $(".results").show();   $(".results").empty();   getRepos();  });});
+},{"./../js/github.js":2}]},{},[3]);
